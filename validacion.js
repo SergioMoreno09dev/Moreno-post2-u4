@@ -38,10 +38,7 @@ ${campo.minLength} caracteres.`);
     limpiarError("nombre");
     return true;
 }
-debe
-tener
-al
-menos
+
 function validarEmail() {
     const campo = document.querySelector("#email");
     if (campo.validity.valueMissing) {
@@ -100,3 +97,18 @@ function validarTelefono() {
     limpiarError("telefono");
     return true;
 }
+
+//Validación en tiempo real
+
+document.querySelector("#nombre").addEventListener("blur", validarNombre);
+document.querySelector("#email").addEventListener("blur", validarEmail);
+document.querySelector("#password").addEventListener("blur", validarPassword);
+document.querySelector("#confirmar").addEventListener("blur", validarConfirmar);
+document.querySelector("#telefono").addEventListener("blur", validarTelefono);
+
+// Limpiar error al comenzar a escribir 
+document.querySelector("#confirmar").addEventListener("input", () => {
+    if
+        (document.querySelector("#confirmar").value)
+        limpiarError("confirmar");
+}); 
